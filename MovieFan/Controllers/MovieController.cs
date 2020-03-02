@@ -8,6 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MovieFan.Models;
 
+/* TODO: 
+    - Radio button on rating
+    - Likers of a movie
+*/
+
 namespace MovieFan.Controllers
 {
     public class MovieController : Controller
@@ -81,11 +86,13 @@ namespace MovieFan.Controllers
             {
                 db.Update(movie);
                 db.SaveChanges();
-                // Tempdata + vue
+                TempData["Update"] = "Update done";
+
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
+                TempData["Update"] = "Update failed";
                 return View();
             }
         }
