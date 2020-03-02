@@ -12,10 +12,16 @@ namespace MovieFan.Controllers
 {
     public class MovieController : Controller
     {
+        private readonly moviefanContext db;
+
+        public MovieController(moviefanContext db)
+        {
+            this.db = db;
+        }
+
         // GET: Movie
         public ActionResult Index()
         {
-            moviefanContext db = new moviefanContext();
             List<Movies> movies = db.Movies
                 .Include(m => m.Category)
                 .ToList();
@@ -25,7 +31,6 @@ namespace MovieFan.Controllers
         // GET: Movie/Details/5
         public ActionResult Details(int id)
         {
-            moviefanContext db = new moviefanContext();
             Movies movie = db.Movies.Find(id);
             return View(movie);
         }
@@ -56,7 +61,6 @@ namespace MovieFan.Controllers
         // GET: Movie/Edit/5
         public ActionResult Edit(int id)
         {
-            moviefanContext db = new moviefanContext();
             Movies movie = db.Movies
                 .Include(m => m.Category)
                 .Include(m => m.Rating)
@@ -71,12 +75,13 @@ namespace MovieFan.Controllers
         // POST: Movie/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult<Movies> Edit(int id, Movies movie)
         {
             try
             {
-                // TODO: Add update logic here
-
+                db.Update(movie);
+                db.SaveChanges();
+                // Tempdata + vue
                 return RedirectToAction(nameof(Index));
             }
             catch
