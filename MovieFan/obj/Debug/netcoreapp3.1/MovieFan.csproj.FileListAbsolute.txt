@@ -116,7 +116,6 @@ C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\Micros
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\Movie\index.cshtml.g.cs
-C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Details.cshtml.g.cs
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\User\index.cshtml.g.cs
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\User\Details.cshtml.g.cs
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
@@ -153,3 +152,5 @@ C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\runtim
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\MovieFan.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Details.cshtml.g.cs
+C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Edit.cshtml.g.cs

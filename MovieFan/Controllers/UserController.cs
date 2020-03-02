@@ -10,27 +10,19 @@ namespace MovieFan.Controllers
 {
     public class UserController : Controller
     {
-        private List<User> getUsers()
-        {
-            return new List<User>()
-            {
-                new User(1, "Alexandre", "Junod", true),
-                new User(2, "Toto", "Titi", false),
-                new User(3, "Tata", "Tutu", false),
-            };
-        }
-
         // GET: User
         public ActionResult Index()
         {
-            List<User> Users = getUsers();
+            moviefanContext db = new moviefanContext();
+            List<Users> Users = db.Users.ToList();
             return View(Users);
         }
 
         // GET: User/Details/5
         public ActionResult Details(int id)
         {
-            User User = getUsers()[id - 1];
+            moviefanContext db = new moviefanContext();
+            Users User = db.Users.Find(id);
             return View(User);
         }
 
@@ -60,7 +52,9 @@ namespace MovieFan.Controllers
         // GET: User/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            moviefanContext db = new moviefanContext();
+            List<Users> Users = db.Users.ToList();
+            return View(Users);
         }
 
         // POST: User/Edit/5

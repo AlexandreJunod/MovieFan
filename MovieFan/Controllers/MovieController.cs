@@ -4,33 +4,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using MovieFan.Models;
 
 namespace MovieFan.Controllers
 {
     public class MovieController : Controller
     {
-        private List<Movie> getMovies()
-        {
-            return new List<Movie>()
-            {
-                new Movie(1, "Blade Runner", "Traverser un labyrinthe pour trouver sa liberté"),
-                new Movie(2, "Taxi", "Des voitures qui vont vite, très vite.."),
-                new Movie(3, "Purple Rain", "Film musical"),
-            };
-        }
-
         // GET: Movie
         public ActionResult Index()
         {
-            List<Movie> movies = getMovies();
+            moviefanContext db = new moviefanContext();
+            List<Movies> movies = db.Movies
+                .Include(m => m.Category)
+                .ToList();
             return View(movies);
         }
 
         // GET: Movie/Details/5
         public ActionResult Details(int id)
         {
-            Movie movie = getMovies()[id - 1];
+            moviefanContext db = new moviefanContext();
+            Movies movie = db.Movies.Find(id);
             return View(movie);
         }
 
@@ -60,7 +56,16 @@ namespace MovieFan.Controllers
         // GET: Movie/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            moviefanContext db = new moviefanContext();
+            Movies movie = db.Movies
+                .Include(m => m.Category)
+                .Include(m => m.Rating)
+                .SingleOrDefault(m => m.Id == id);
+
+            ViewBag.CategoryId = db.Categories.Select(m => new SelectListItem { Text = m.Name, Value = m.Id.ToString() }).ToList();
+            ViewBag.RatingId = db.Ratings.Select(r => new SelectListItem { Text = r.Name, Value = r.Id.ToString() }).ToList();
+
+            return View(movie);
         }
 
         // POST: Movie/Edit/5

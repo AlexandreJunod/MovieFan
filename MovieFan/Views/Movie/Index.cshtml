@@ -1,4 +1,4 @@
-﻿@model List<Movie>
+﻿@model List<Movies>
 
 @{
     ViewData["Title"] = "Films";
@@ -7,13 +7,26 @@
 
 <div class="container">
     <h1>Liste de films</h1>
-    @foreach(Movie movie in Model)
-    {
-        <a href="/Movie/Details/@movie.Id">
-            <div class ="row border p-3">
-                @movie.Title
-            </div>
-        </a>
-    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Film</th>
+                <th scope="col">Catégorie</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Movies movie in Model)
+            {
+                <tr>
+                    <th scope="row">@movie.Id</th>
+                    <td>@movie.Title</td>
+                    <td>@movie.Category.Name</td>
+                    <td><a href="/Movie/Details/@movie.Id" class="btn btn-outline-primary" role="button" aria-pressed="true">Afficher le film</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
 

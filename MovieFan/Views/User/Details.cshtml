@@ -1,4 +1,4 @@
-﻿@model MovieFan.Models.User
+﻿@model MovieFan.Models.Users
 
 @{
     ViewData["Title"] = "Details d'un membre";
@@ -9,7 +9,7 @@
     <h4>@Model.Firstname @Model.Lastname</h4>
     <hr />
     <dl class="row col-12">
-        @(Model.Isadmin ? "Ce membre est un administrateur" : "Ce membre n'est pas un administrateur")
+        @(Model.IsAdministrator ? "Ce membre est un administrateur" : "Ce membre n'est pas un administrateur")
     </dl>
     <hr />
 </div>
