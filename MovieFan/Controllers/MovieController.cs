@@ -86,13 +86,13 @@ namespace MovieFan.Controllers
             {
                 db.Update(movie);
                 db.SaveChanges();
-                TempData["Update"] = "Update done";
+                TempData["Update"] = movie.Title + " à bien été modifié";
 
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                TempData["Update"] = "Update failed";
+                TempData["Update"] = movie.Title + "n'a pas été modifié";
                 return View();
             }
         }

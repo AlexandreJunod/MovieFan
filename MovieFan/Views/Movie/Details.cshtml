@@ -3,19 +3,10 @@
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var tempval = TempData["update"];
 }
 
 <div>
 <h1>@Model.Title</h1>
-    @if (tempval.ToString() == "abcd") 
-{
-    <span>Check</span> //Never displayed
-}
-else
-{
-    <span>@tempval</span>; // Display "abcd"
-}
     <hr />
     @Model.Synopsis
     <hr />

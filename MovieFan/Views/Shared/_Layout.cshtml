@@ -33,6 +33,10 @@
         </nav>
     </header>
     <div class="container">
+        @if (TempData.Peek("update") != null)
+        {
+            <div class="alert alert-info" role="alert">@TempData["update"]</div>
+        }
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
