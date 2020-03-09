@@ -21,21 +21,13 @@ namespace MovieFan.Models
         public virtual DbSet<UserLikeMovie> UserLikeMovie { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
-        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=moviefan;Trusted_Connection=True;");
-            }
-
-            
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {            
             if (!optionsBuilder.IsConfigured)
             {
                 System.Console.Error.WriteLine("Connection a la base de donnée dans le startup, ratée");
             }
-            
-        }*/
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
