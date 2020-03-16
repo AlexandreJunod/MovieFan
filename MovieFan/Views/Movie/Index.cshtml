@@ -13,6 +13,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Film</th>
                 <th scope="col">Catégorie</th>
+                <th scope="col">Rating</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -23,6 +24,7 @@
                     <th scope="row">@movie.Id</th>
                     <td>@movie.Title</td>
                     <td>@movie.Category.Name</td>
+                    <td>@movie.Rating.Name</td>
                     <td><a href="/Movie/Details/@movie.Id" class="btn btn-outline-primary" role="button" aria-pressed="true">Afficher le film</a></td>
                 </tr>
             }

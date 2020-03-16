@@ -27,7 +27,7 @@ namespace MovieFan
         {
             services.AddControllersWithViews();
             services.AddDbContext<moviefanContext>(
-                options => options.UseSqlServer(Configuration.GetSection("ConnectionString").Value)
+                options => options.UseSqlServer(Configuration.GetSection("Databases").GetSection("moviefan").Value)
             );
         }
 

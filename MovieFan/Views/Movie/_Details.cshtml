@@ -1,0 +1,22 @@
+﻿<h1>@Model.Title</h1>
+<hr />
+<div class="row">
+    @Model.Synopsis
+</div>
+<hr />
+<div class="row">
+    <label class="control-label mr-3">Catégorie:</label>@Model.Category.Name
+</div>
+<hr />
+<div class="row">
+    <label class="control-label mr-3">Rating:</label>@Model.Rating.Name
+</div>
+<hr />
+<div class="row">
+    <label class="control-label mr-3">Likers:</label>@String.Join(", ", Model.Likers)
+</div>
+<hr />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

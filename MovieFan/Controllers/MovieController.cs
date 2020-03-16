@@ -8,11 +8,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MovieFan.Models;
 
-/* TODO: 
-    - Radio button on rating
-    - Likers of a movie
-*/
-
 namespace MovieFan.Controllers
 {
     public class MovieController : Controller
@@ -29,6 +24,7 @@ namespace MovieFan.Controllers
         {
             List<Movies> movies = db.Movies
                 .Include(m => m.Category)
+                .Include(m => m.Rating)
                 .ToList();
             return View(movies);
         }
@@ -36,7 +32,16 @@ namespace MovieFan.Controllers
         // GET: Movie/Details/5
         public ActionResult Details(int id)
         {
-            Movies movie = db.Movies.Find(id);
+            Movies movie = db.Movies
+                .Include(m => m.Category)
+                .Include(m => m.Rating)
+                .Include(m => m.UserLikeMovie)
+                .ThenInclude(u => u.User)
+                .SingleOrDefault(m => m.Id == id);
+
+            ViewBag.CategoryId = db.Categories.Select(m => new SelectListItem { Text = m.Name, Value = m.Id.ToString() }).ToList();
+            ViewBag.RatingId = db.Ratings.Select(r => new SelectListItem { Text = r.Name, Value = r.Id.ToString() }).ToList();
+
             return View(movie);
         }
 

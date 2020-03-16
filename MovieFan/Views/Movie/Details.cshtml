@@ -1,18 +1,15 @@
 ﻿@model MovieFan.Models.Movies
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Film";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-<h1>@Model.Title</h1>
-    <hr />
-    @Model.Synopsis
-    <hr />
+<div id="divDetails">
+    <partial name="_Details" />
+</div>
 
+<div id="divEdit">
+    <partial name="_Edit" />
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<script src="~/js/movieedit.min.js"></script>

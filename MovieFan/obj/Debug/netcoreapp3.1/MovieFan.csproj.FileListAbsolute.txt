@@ -151,6 +151,9 @@ C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\runtim
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\MovieFan.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Details.cshtml.g.cs
-C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Edit.cshtml.g.cs
+C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\package-lock.json
+C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\bin\Debug\netcoreapp3.1\bundleconfig.json
+C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\MovieFan.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\Movie\_Details.cshtml.g.cs
+C:\Users\alexandre.junod\GitHub\MovieFan\MovieFan\obj\Debug\netcoreapp3.1\Razor\Views\Movie\_Edit.cshtml.g.cs

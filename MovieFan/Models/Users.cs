@@ -12,5 +12,11 @@ namespace MovieFan.Models
         {
             get => Convert.ToBoolean(this.IsAdmin);
         }
+
+        [NotMapped]
+        public string FullName
+        {
+            get => $"{this.Firstname} {this.Lastname}";
+        }
     }
 }
